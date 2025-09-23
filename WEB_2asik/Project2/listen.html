@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play Beat | Listening</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       /* Styles for clickable track title */
+        .clickable-title {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .clickable-title:hover {
+            color: var(--accent-color, #007bff);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <button style="float:right" id="user-area"></button>
+    <a href="playlist.html"><button style="font-size: 20px; float:right; margin-right: 15px;">My Playlist</button></a>
+    <a href="index.html" style="float: left"><button style="all: unset;"><img id="miniLogo" class="logo" src="Logos/logoWmini.png" alt="logo" width="150" height="auto"></button></a>
+    <script src="register.js"></script>
+    <script src="toggleTheme.js"></script>
+    
+    <div class="vinyl" style="margin-top:150px;">
+        <div class="label"></div>
+        <div class="spindle"></div>
+    </div>
+    
+    <div class="container" style="margin-top: -200px;">
+        <input id="search" placeholder="Search for songs...">
+        <div id="songList"></div>
+    </div>
+    
+    <audio id="player" controls style="width: 70%;"></audio>
+    
+    <script src="songlist.js"></script>
+    <script>
+        function addToPlaylist(index) {
+            let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+            
+            // Let's check if this track is already in the playlist
+            const isAlreadyInPlaylist = playlist.some(song => song.title === songs[index].title);
+            
+            if (isAlreadyInPlaylist) {
+                alert(`${songs[index].title} уже находится в плейлисте`);
+            } else {
+                playlist.push(songs[index]);
+                localStorage.setItem('playlist', JSON.stringify(playlist));
+                alert(`${songs[index].title} добавлена в плейлист`);
+            }
+        }
+    </script>
+</body>
+</html>
