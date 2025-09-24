@@ -102,7 +102,7 @@ input {
   margin: 20px auto;
   padding: 20px 25px;
   background: rgba(255, 255, 255, 0.05);
-  border-left: 5px solid var(--accent-color); /* акцентная полоска */
+  border-left: 5px solid var(--accent-color);
   border-radius: 12px;
   transition: transform 0.3s, background 0.3s;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -132,8 +132,8 @@ input {
   padding: 10px 15px;
   margin: 15px 0;
   border-radius: 8px;
-  word-break: break-word;       /* переносим длинные слова */
-  overflow-wrap: break-word;    /* перенос текста */
+  word-break: break-word;       
+  overflow-wrap: break-word;    
 }
 
 .song-left {
@@ -141,7 +141,7 @@ input {
   align-items: flex-start;
   gap: 10px;
   flex: 1;
-  min-width: 0;                 /* важно для переноса текста в flex */
+  min-width: 0;             
 }
 
 .song-left img {
@@ -170,9 +170,9 @@ input {
 }
 
 .container {
-  max-width: 800px;     /* ограничиваем ширину списка песен */
-  margin: 150px auto 0 auto; /* отступ сверху и центрирование */
-  padding: 0 20px;      /* небольшой отступ от краёв */
+  max-width: 800px; 
+  margin: 150px auto 0 auto;
+  padding: 0 20px; 
   box-sizing: border-box;
 }
 
@@ -180,7 +180,6 @@ img.logo {
       transition: opacity 0.3s;
     }
 
-/* Тёмная тема */
 .dark-theme {
     --bg-color: #30302f;
     --text-color: #eaeaea;

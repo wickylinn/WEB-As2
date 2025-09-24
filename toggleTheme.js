@@ -1,5 +1,5 @@
 function applyTheme() {
-  const theme = localStorage.getItem("theme") || "light"; // light by default
+  const theme = localStorage.getItem("theme") || "light";
   const logo = document.getElementById("logo");
   const miniLogo = document.getElementById("miniLogo");
 
@@ -20,7 +20,7 @@ function toggleTheme() {
   } else {
     localStorage.setItem("theme", "dark");
   }
-  applyTheme(); // we immediately update the display
+  applyTheme();
 }
 
 
