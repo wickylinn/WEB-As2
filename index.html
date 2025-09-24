@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play Beat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="text-align: center;">
+  <img id="logo" class="logo" src="Logos/logoW.png" alt="logo" width="400" height="auto">
+  </div>
+  <h2>Welcome to your music world! <br>Your personal online player with favorite tracks, playlists, and smart recommendations.<br>Music is always with you — on your computer, tablet, or phone.</h2>
+  <a href = "listen.html"><button style="text-decoration: none; font-size: 35px; margin-top: 85px; padding: 10px 30px;">Start Listening</button></a> 
+  <div class="vinyl" style="margin-left: 0%; margin-top: -8%; width: 300px; height: 300px; background: repeating-radial-gradient(circle, #111 0 2px, #393939 2.5px 5.2px)" >
+    <div class="label"></div>
+    <div class="spindle"></div>
+  </div>
+  <div class="top-left-buttons">
+    <button style="font-size: 25px; margin-right: 15px;" onclick="window.location.href='about.html'">About</button>
+    <button style="font-size: 25px;" onclick="window.location.href='news.html'">News</button>
+  </div>
+    <div style="position: absolute; top: 50px; right: 50px; display: flex; gap: 10px;">
+    <button style="font-size: 20px;" onclick="toggleTheme()">Toggle Theme</button>
+    <button id="register-btn">Register</button>
+    <button style="font-size:22px; display:none;" id="user-area"></button>
+  </div>
+  <script src="toggleTheme.js"></script>
+  <script src="register.js"></script>
+</body>
+</html> 
