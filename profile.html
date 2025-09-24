@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile - Play Beat</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    #avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      padding: 10px;
+      object-fit: cover;
+      border: 3px solid var(--accent-color);
+    }
+  </style>
+</head>
+<body>
+  <button style="all: unset; position: absolute; left: 60px;"><img id="miniLogo" class="logo" src="Logos/logoWmini.png" alt="logo" width="150" height="auto"></button>
+  <div class="vinyl" style="margin-top:150px; position: absolute;">
+        <div class="label"></div>
+        <div class="spindle"></div>
+  </div>
+  <h1>Your Profile</h1>
+  <div id="profile-info"></div>
+  <br>
+  <div><button onclick="logout()">Log out</button></div><br>
+  <div><button onclick="openFriends()">Friends</button></div><br>
+  <div><button onclick="openSettings()">Settings</button></div><br>
+  <div><a href="index.html"><button style="text-decoration: none;">Back to Home</button></a></div>
+  <script src="toggleTheme.js"></script>
+  <script>
+    function loadProfile() {
+      const user = JSON.parse(localStorage.getItem("user"));
+      console.log("Loaded user:", user);
+      if (!user) {
+        window.location.href = "register.html";
+        return;
+      }
+
+      document.getElementById("profile-info").innerHTML = `
+        <img id="avatar" src="${user.avatar || 'defaultAva.png'}" alt="avatar"><br><br>
+        <p><b>Name:</b> ${user.username}</p>
+        <p><b>Phone:</b> ${user.phone}</p>
+        <p><b>Email:</b> ${user.email}</p>
+      `;
+    }
+
+    function logout() {
+      localStorage.removeItem("user");
+      window.location.href = "index.html";
+    }
+
+    function openFriends() {
+      alert(" Friends section will be added later.");
+    }
+
+    function openSettings() {
+      alert(" Settings section will be added later.");
+    }
+
+    loadProfile();
+  </script>
+</body>
+</html>
+
